@@ -6,29 +6,26 @@ import FavMenu from "./components/FavMenu";
 import Hero from "./components/Hero";
 import Section from "./components/Section";
 import { FavoritesProvider } from "./components/FavoritesContext";
+import Router from "./Router";
 
 function App() {
-  const [showFavMenu, setShowFavMenu] = useState(false);
-
-  function toggleFavMenu() {
-    setShowFavMenu(!showFavMenu);
-  }
-
   return (
     <FavoritesProvider>
-      <div style={{ overflowX: "hidden", position: "relative" }}>
+      <Router />
+      {/* <div style={{ overflowX: "hidden", position: "relative" }}>
         <header>
           <Navbar buttonAction={toggleFavMenu} showFavMenu={showFavMenu} />
           <Hero />
         </header>
         <main>
+          <Router />
           <Section title="Characters" />
         </main>
         <section>
           <Section title="Characters" />
         </section>
         <FavMenu showState={showFavMenu} />
-      </div>
+      </div> */}
     </FavoritesProvider>
   );
 }
