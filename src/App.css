@@ -1,38 +1,148 @@
-.App {
-  text-align: center;
+a {
+  text-decoration: none;
+}
+header img {
+  max-width: 120px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button {
+  color: #ffffff;
+  background-color: transparent;
+  border-radius: 0.25rem;
+  border: solid 2px #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+button:hover {
+  color: #ed1d24;
+}
+.active {
+  color: #ed1d24;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.fav-menu {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40%;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(100%);
+}
+
+@media (min-width: 768px) {
+  .fav-menu {
+    width: 20%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.toggle {
+  transform: translateX(0%);
 }
 
-.App-link {
-  color: #61dafb;
+.hero {
+  background-color: #ed1d24;
+  position: relative;
+  height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero {
+  background-image: url("/src/assets/images/hero-image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+h2 {
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  top: 110%;
+  left: 0;
+  height: 5px;
+  width: 80%;
+  background-color: #ed1d24;
+}
+.list {
+  width: 100% !important;
+}
+/*Scrollbar Styles*/
+
+.list::-webkit-scrollbar {
+  width: 1px;
+}
+
+.list::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: #ed1d24;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.list::-webkit-scrollbar-thumb:hover {
+  background: #a3161a;
+}
+.card-text {
+  height: 100px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+}
+.card-body a {
+  color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+.card-body a:hover {
+  color: #ed1d24;
+}
+.input-group-text {
+  background-color: #ed1d24;
+}
+.form-control:focus {
+  color: #212529;
+  background-color: #ffffff;
+  border-color: #ed1d24;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(237 29 36 / 25%);
+}
+.filter-preview {
+  top: 120%;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: #ffffff;
+  border: solid 1px #ced4da;
+}
+.filter-preview a,
+.form-check label {
+  color: #000000;
+  font-weight: 700;
+}
+.filter-preview a:hover {
+  background-color: #e9e9e9;
+}
+.form-check-input:checked {
+  background-color: #ed1d24;
+  border-color: #ed1d24;
+}
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem rgb(237 29 36 / 25%);
+}
+.filter-button {
+  border-color: #ed1d24;
+  color: #ed1d24;
 }
