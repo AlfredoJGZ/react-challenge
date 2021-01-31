@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import Section from "./components/Section";
 import FavMenu from "./components/FavMenu";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Detail from "./components/Detail";
 
 function Router() {
   const [showFavMenu, setShowFavMenu] = useState(false);
@@ -18,7 +19,6 @@ function Router() {
         <header>
           <Switch>
             <Route
-              exact
               path="/"
               render={() => (
                 <Navbar
@@ -32,6 +32,24 @@ function Router() {
             <Route exact path="/" component={Hero} />
           </Switch>
         </header>
+
+        <main>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => <Section title="Characters" />}
+            />
+            <Route
+              exact
+              path="/character/:id"
+              render={(props) => {
+                let id = props.match.params.id;
+                return <Detail id={id} title="character" />;
+              }}
+            />
+          </Switch>
+        </main>
 
         <Switch>
           <Route
